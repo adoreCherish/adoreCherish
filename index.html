@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body >
+    <div id="app">
+        <p>{{name}}</p>
+        <p v-html="age"></p>
+        <p>{{name2}}</p>
+    </div>
+    <script src="./compile.js"></script>
+    <script src="./vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                // test: '1',
+                // foo: {
+                //     bar: 'bar',
+                // }
+                name: 'wyq',
+                age: '1',
+                name2: 'wyq2',
+            },
+            created() {
+                setTimeout(()=>{
+                    console.log('执行计时器');
+                    this.name = 'czk';
+                    this.name2 = 'czk';
+                }, 1000);
+            }
+        })
+        // app.$data.test = '2';
+        // app.$data.foo.bar = 'foo.bar';
+    </script>
+</body>
+</html>
